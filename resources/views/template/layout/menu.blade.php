@@ -1,68 +1,79 @@
+<?php
+function display_menu($parent_id = 0)
+{
+    // Get All Menu
+    $menu = App\Models\Menu::where('parent_id', $parent_id)
+        ->where('status', 1)
+        ->orderBy('ordering')
+        ->get();
 
-    <!--[if lt IE 8]>
-           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-       <![endif]-->
+    foreach ($menu as $key => $val) {
+        $sub_menu = App\Models\Menu::where('parent_id', $val->id)
+            ->where('status', 1)
+            ->orderBy('ordering')
+            ->get();
 
-   <div class="body_container">
-   <!-- ============================= Header ================================ -->
+        $url = url($val->link);
+        $url_current = Request::segment(1);
+        // Multiple Icon
+        $icon = explode(', ', $val->modul_class);
+        if (count($icon) > 1) {
+            $icon = '<i class="' . $icon[0] . '" id="tree"></i><i class="' . $icon[1] . '" id="trees"></i>';
+        } else {
+            $icon = '<i class="' . $val->modul_class . '"></i>';
+        }
 
-           
-   <!-- ================================ Menu ============================== -->
-   <div class="main_menu menu_fixed">
-       <div class="container">
-           <div class="row">
-               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                   <nav class="navbar navbar-default">
-                      
-                      <!-- Collect the nav links, forms, and other content for toggling -->
-                      <div class="collapse navbar-collapse flt_left" id="navbar-collapse-1">
+        if (count($sub_menu) > 0) {
+            echo '<li class="sub_dropdown">';
+            echo '<a class="transition-ease" href="' . $val->link . '">' . $icon . ' ' . $val->name . '</a>';
+            echo '<ul class="sub_menu">';
+            foreach ($sub_menu as $s) {
+                $sub_url = url(Request::segment(1) . '/' . $s->link);
+                echo '<li><a href="' . $sub_url . '"><i class="' . $s->modul_class . '"></i>' . ' ' . $s->name . '</a></li>';
+            }
+            echo '</ul>';
+
+            echo '</li>';
+        } else {
+            echo '<li><a class="transition-ease" <a  href="' . $url . '"><i class="' . $val->modul_class . '"></i> ' . $val->name . '</a></li>';
+        }
+    }
+}
+?>
+
+<?php $setting = App\Models\Setting::select('phone')->first(); ?>
+
+<!-- ================================ Menu ============================== -->
+<div class="main_menu menu_fixed">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <nav class="navbar navbar-default">
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse flt_left" id="navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                          <li><a class="transition-ease" href="home"><i class="fa fa-home"></i> Home</a></li>
-                          <li class="sub_dropdown"><a class="transition-ease" href="about"><i class="fa fa-book"></i> About</a>
-                                  <ul class="sub_menu">
-                                   <li><a href="mission" class="transition-ease"><i class="fa fa-eye" aria-hidden="true"></i> OUR MISSION & VISION</a></li>
-                                   <li><a href="overview" class="transition-ease"><i class="fa fa-line-chart" aria-hidden="true"></i> PROJECT OVERVIEW</a></li>
-                                   <li><a href="getinvolved" class="transition-ease"><i class="fa fa-share" aria-hidden="true"></i> GET INVOLVED </a></li>
-                                  </ul>
-                          </li>
-                          <li class="sub_dropdown"><a class="transition-ease" href="ourcpa"><i class="fa fa-solid fa-tree"></i> Our CPA</a>
-                                  <ul class="sub_menu">
-                                   <li><a href="abounlue" class="transition-ease"><i class="fa fa-pagelines"></i> Aboun Leu CPA</a></li>
-                                   <li><a href="nglav" class="transition-ease"><i class="fa fa-pagelines"></i> O’Nglav CPA</a></li>
-                                   <li><a href="yuoknamram" class="transition-ease"><i class="fa fa-pagelines"></i> Yuoknamram CPA</a></li>
-                                   <li><a href="chammarek" class="transition3s"><i class="fa fa-pagelines"></i> Cham Marek CPA </a></li>
-                                  </ul>
-                          </li>
-                          <li class="sub_dropdown"><a class="transition-ease" href="ourcf"><i class="fa fa-solid fa-tree" id="tree"></i><i class="fa fa-solid fa-tree" id="trees"></i> Our CF</a>
-                                  <ul class="sub_menu">
-                                   <li><a href="lapaek" class="transition-ease"><i class="fa fa-leaf"></i> Bos Lapaek CF</a></li>
-                                   <li><a href="yaynheb" class="transition-ease"><i class="fa fa-leaf"></i> Bos Yay Nheb CF</a></li>
-                                   <li><a href="seangveal" class="transition-ease"><i class="fa fa-leaf"></i> Kon Seang Veal CF</a></li>
-                                   <li><a href="angkobthom" class="transition-ease"><i class="fa fa-leaf"></i> Ou Angkob Thom CF</a></li>
-                                   <li><a href="kladaek" class="transition-ease"><i class="fa fa-leaf"></i> Ou Kladaek CF</a></li>
-                                   <li><a href="pongrong" class="transition-ease"><i class="fa fa-leaf"></i> Ou Pong Rong CF</a></li>
-                                   <li><a href="ousom" class="transition-ease"><i class="fa fa-leaf"></i> Ou Som CF</a></li>
-                                   <li><a href="kbalkmoch" class="transition-ease"><i class="fa fa-leaf"></i> Tropeang Kbal Kmoch CF</a></li>
-                                  </ul>
-                          </li>
-                          <li class="transition-ease"><a class="transition-ease" href="action"><i class="fa fa-users"></i> Action</a></li>
-                          <li class="transition-ease"><a class="transition-ease" href="stakeholder"><i class="fa fa-table"></i> Stakeholder</a></li>
-                          <li><a class="transition-ease" href="contact"><i class="fa fa-envelope"></i> Contact</a></li>
+                            <?php display_menu(); ?>
                         </ul>
-                      </div><!-- /.navbar-collapse -->
-                      <!-- Brand and toggle get grouped for better mobile display -->
-                      <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
+                    </div><!-- /.navbar-collapse -->
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
-                      </div>
-                          <p class="navbar-text flt_left"><a href="tel:+(+855) 23 885 412" class="transition4s"><i class="fa fa-phone"></i>(+855) 23 885 412</a></p>
-                   </nav> <!-- /navbar-default -->
-               </div>
-           </div> <!-- /row -->
-       </div> <!-- /container -->
-   </div> <!-- /main_menu -->
-   <!-- ================================ /Menu ============================== -->
+                    </div>
+                    <p class="navbar-text flt_left">
+                        <a href="tel:+(+855) 23 885 412" class="transition4s"><i class="fa fa-phone"></i>
+                            {{ $setting->phone }}
+                        </a>
+                    </p>
+                </nav> <!-- /navbar-default -->
+            </div>
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+</div> <!-- /main_menu -->
+<!-- ================================ /Menu ============================== -->
