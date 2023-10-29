@@ -2,36 +2,69 @@
 <!-- =============================== Contact us ========================== -->
 <section class="contact_us" style="padding-top: 40px;">
   <div class="container">
-    @foreach ($cat->post as $p )
-    <p>{!!$p->description!!}</p>
-    @endforeach
+    <div class="row heading">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="title_holder2">
+          <h3>Get in <span>Touch</span></h3>
+        </div> <!-- /title_holder2 -->
+      </div>
+      <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12">
+      <h5>Mr. SINA YUN,<br><br> Program coordintor | climate Resilience Oxfam | Phnom Penh | Cambodia</h5><br><br>
+        <p>
+          &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;&nbsp; Provide contact information for project inquiries, partnerships, and collaborations. <br>
+          &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;&nbsp;&nbsp; Include a contact form for easy communication.
+        </p>
+      </div>
+    </div> <!-- /row -->
+    <div class="row contact_deatils">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left address">
+        <h4 style="line-height:45px;">Need Our Service Or Have Queries ?</h4>
+        <div class="address_holder">
+          <div class="address_type">
+            <div class="icon_holder border_round">
+              <div class="icon_bg border_round">
+                <i class="fa fa-map-marker"></i>
+              </div> <!-- /icon_bg -->
+            </div> <!-- /icon_holder -->
+            <div class="text">
+              <h5>Address</h5>
+              <p>The Point, 3rd Floor, U08-09, No 113C, <br>Mao Tse Tung Boulevard, Tuol Svay Prey I, Beung Keng Kang Phnom Penh, Cambodia</p>
+            </div> <!-- /text -->
+          </div> <!-- /address_type -->
+
+          <div class="address_type">
+            <div class="icon_holder border_round">
+              <div class="icon_bg border_round">
+                <i class="fa fa-phone"></i>
+              </div> <!-- /icon_bg -->
+            </div> <!-- /icon_holder -->
+            <div class="text">
+              <h5>Contact Details</h5>
+              <p>Troll Free: (+855) 23 885 412; <br>(855) 23 885 413</p>
+              
+            </div> <!-- /text -->
+          </div> <!-- /address_type -->
+
+          <div class="address_type">
+            <div class="icon_holder border_round">
+              <div class="icon_bg border_round">
+                <i class="fa fa-envelope"></i>
+              </div> <!-- /icon_bg -->
+            </div> <!-- /icon_holder -->
+            <div class="text">
+              <h5>Contact Email</h5>
+              <a href="https://cambodia-redd.org/" style="color: black;">sina.yun@oxfam.org</a>
+            </div> <!-- /text -->
+          </div> <!-- /address_type -->
+
+        </div> <!-- /address_holder -->
+      </div>
+    </div> <!-- /contact_deatils -->
   </div> <!-- /container -->
 </section>
 
 <!-- =============================== Contact us ========================== -->
 
 
-
-<!-- =============================== Parallax ======================== -->
-
-<section class="parallax" style="background-image: url(images/contact/bgslide2.jpg);">
-  <div class="overlay"></div>
-  <div class="container parallex_text">
-    <h3>Promotion Equitable Climate Actions</h3>
-    <p>The "Promotion Equitable Climate Actions in Cambodia" project <br> is a four-year project funded by Oxfam and the European Union to reduce carbon emissions from <br>agroforestry exploits in CFs and CPAs through the promotion of sustainable and alternative livelihoods <br>and holding the RGC accountable to its Nationally Determined Contribution (NDC) commitment.</p>
-    <h5>Lets Start Your Service Today  - <a href="contact">Contact Us</a></h5>
-  </div> <!-- /container -->
-</section> <!-- /Parallax -->
-
-
-<!-- =============================== /Parallax ======================== -->
-
-
-
-<!-- ======================== google map ====================== -->
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995933.5721371671!2d104.3031779502593!3d12.819640999089977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310de21fe3d2c3ab%3A0x64bcff54ced9347c!2sKampong%20Thom%20Province!5e0!3m2!1sen!2skh!4v1696387014600!5m2!1sen!2skh" width="1600" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
-  </div>
-<!-- ======================= /google map ========================= -->
 
 

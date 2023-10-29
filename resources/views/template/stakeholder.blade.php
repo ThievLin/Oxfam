@@ -16,16 +16,13 @@
               border-radius: 4px;
             ">
             
-            @foreach ($cat->post as $p )
+            <?php $p= $cat->post->first() ?>
               <div class="custom-heading">
-                
+
                  <p>
                   {!!$p->description!!}
                  </p>
-                
-              
             </div> 
-          @endforeach
         </section>
      </section>
 

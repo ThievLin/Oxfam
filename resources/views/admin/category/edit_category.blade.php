@@ -50,6 +50,8 @@
                   <option value="contact-us-cat" <?php if($cat->block == "contact-us-cat"){ echo "selected";}  ?> >contact-us-cat</option>
                   <option value="about-addition" <?php if($cat->block == "about-addition"){ echo "selected";}  ?> >about-addition</option>
 
+
+
                   <option value="about" <?php if($cat->block == "about"){ echo "selected";}  ?> >About</option>
                   <option value="inner_banner" <?php if($cat->block == "inner_banner"){ echo "selected";}  ?> >inner_banner</option>
 
