@@ -1,5 +1,4 @@
 
-
 	<!-- =========================== All services page ======================== -->
 	<section class="service_page container" style="padding-top: 50px;">
 		<div class="row">
@@ -16,7 +15,7 @@
 					</div> <!-- /img_holder -->
 					<div class="text">
 						<h5>{{$p->title}}</h5>
-						<p> {!!$p->description!!}</p>
+						<p>{!! substr($p->description, 0, 805)!!}</p>
 						<a href="{{$p->link}}" class="main_anchor transition-ease">Read More <i class="fa fa-caret-right"></i></a>
 					</div> <!-- /text -->
 				</div> <!-- /service_item -->

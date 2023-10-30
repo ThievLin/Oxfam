@@ -23,7 +23,7 @@ $slides = App\Models\Slide::get();
                                 data-transform_out="y:[100%];s:1000;s:1000;"
                                 data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="2000"
                                 data-splitin="none" data-splitout="none" data-responsive_offset="on">
-                                <h1>{{ $slide->description }}</h1>
+                                {!! $slide->description !!}
                             </div>
                         </li>
                         <!-- /Slide_show -->
@@ -42,11 +42,11 @@ $slides = App\Models\Slide::get();
                                 data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;"
                                 data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                                 data-start="1300" data-splitin="none" data-splitout="none">
-                                <h1>{{ $slide->description }}</h1>
+                                {!! $slide->description !!}
                             </div>
                         </li>
                         <!-- /Slide2 -->
-                    @else
+                    @elseif($key == 2)
                         <!-- /Slide_3 -->
                         <li data-transition="slideright" class="slide_show slide_3"> <!-- Slide_3 -->
                             <img class="rev-slidebg" data-bgparallax="3" data-bgposition="center center"
@@ -60,7 +60,7 @@ $slides = App\Models\Slide::get();
                                 data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;"
                                 data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                                 data-start="1300" data-splitin="none" data-splitout="none">
-                                <h1>{{ $slide->description }}</h1>
+                                {!! $slide->description !!}
                             </div>
                         </li>
                         <!-- /Slide_3 -->

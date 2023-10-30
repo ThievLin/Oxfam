@@ -28,7 +28,7 @@
               </div>
               <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control" placeholder="Enter Description"></textarea>
+                <textarea name="description" class="form-control ckeditor"  id="editor" placeholder="Enter Description"></textarea>
               </div>
               <!--
               <div class="form-group">
@@ -136,3 +136,7 @@
 	</div>
 	
 @endsection
+
+<script>
+  CKEDITOR.replace( 'ckeditor1' );
+ </script>

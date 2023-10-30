@@ -280,6 +280,9 @@ Route::get('login', [LoginController::class, 'get_login']);
 Route::post('login', [LoginController::class, 'post_login']);
 Route::get('logout', [LoginController::class, 'dologout']);
 
+// Post Detail
+Route::get('{link}/{id}/detail',['as'=>'{link}/{id}/detail','uses'=>'FrontendController@get_post_detail']);
+
 // Handle Request dynamic link
 Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index_link']);
 
@@ -289,9 +292,7 @@ Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index
 
 
 
-// Post Detail
-Route::get('{link}/{id}/detail',['as'=>'{link}/{id}/detail','uses'=>'FrontendController@get_post_detail']);
 
-Route::get('{local}/detail/{id}/{link?}',['as'=>'{local}/detail/{id}/{link?}','uses'=>'FrontendController@get_post_detail_local']);
+
 
 

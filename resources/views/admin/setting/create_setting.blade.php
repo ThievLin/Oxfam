@@ -176,6 +176,7 @@
 <script>
  CKEDITOR.replace( 'ckeditor1' );
 </script>
+
 <script>
  CKEDITOR.replace( 'ckeditor2' );
 </script>

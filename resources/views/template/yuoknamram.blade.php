@@ -43,11 +43,13 @@
 								<p>
 									{!!$p->description!!}
 								</p>			
+								@if ($p->image)
 								<img class="img-responsive col-lg-12 col-md-12 col-sm-12" src="{{url('images/'.$p->image)}}" alt="image" style="padding-top: 60px;">
+								@endif
 							</div>		
 							@endif
 
-						@endforeach
+							@endforeach
 							
 						</div>
 					</div>

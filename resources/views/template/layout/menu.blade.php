@@ -24,11 +24,13 @@ function display_menu($parent_id = 0)
         }
 
         if (count($sub_menu) > 0) {
+            $url = url($val->link);
             echo '<li class="sub_dropdown">';
-            echo '<a class="transition-ease" href="' . $val->link . '">' . $icon . ' ' . $val->name . '</a>';
+            echo '<a class="transition-ease" href="' . $url . '">' . $icon . ' ' . $val->name . '</a>';
             echo '<ul class="sub_menu">';
             foreach ($sub_menu as $s) {
-                $sub_url = url(Request::segment(1) . '/' . $s->link);
+
+                $sub_url = url( $s->link);
                 echo '<li><a href="' . $sub_url . '"><i class="' . $s->modul_class . '"></i>' . ' ' . $s->name . '</a></li>';
             }
             echo '</ul>';

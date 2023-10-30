@@ -118,26 +118,22 @@ class FrontendController extends Controller
      }
      public function get_post_detail(Request $request,$local,$id,$link=''){
          
-         if($request->segment(1) == 'kh') {
-             $local = 2;
-         }elseif($request->segment(1) == 'en') {
-             $local = 1;
-         }elseif($request->segment(1) == 'cn') {
-             $local = 3;
-         }else {
-             $local = 1;
-         }
+        
          $data1 = Post::find($id);
-         if(count($data1) > 0){
+         
+        
+         if(!empty($data1)){
+           
             $data = $data1;
             $link = $link."/".$id."/detail";
          }else{
-         //   $link = $link."/".$id."/detail";
-         //   $data1 = Post::find($id);
-         //   $data = $data1;
-             return Redirect()->back();
+          
+           $link = $link."/".$id."/detail";
+           $data1 = Post::find($id);
+           $data = $data1;
+             
          }
-         return view('template.post_detail',compact('data' ,'link','local'));
+         return view('template.post_detail',compact('data' ,'link'));
     }
     public function get_post_detail_local(Request $request,$local,$id,$link=''){
          $code = $local;

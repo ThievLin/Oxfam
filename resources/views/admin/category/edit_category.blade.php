@@ -50,6 +50,7 @@
                   <option value="contact-us-cat" <?php if($cat->block == "contact-us-cat"){ echo "selected";}  ?> >contact-us-cat</option>
                   <option value="about-addition" <?php if($cat->block == "about-addition"){ echo "selected";}  ?> >about-addition</option>
                   <option value="cpaplan" <?php if($cat->block == "cpaplan"){ echo "selected";}  ?> >cpaplan</option>
+                  <option value="address" <?php if($cat->block == "address"){ echo "selected";}  ?> >address</option>
 
 
 
