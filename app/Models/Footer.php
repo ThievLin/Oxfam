@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Footer extends Model
 {
     use HasFactory;
-    protected $table = 'footer';
+    protected $table = 'footers';
+
+    public function pages()
+    {
+        return $this->belongsToMany(Post::class, 'footer_pages', 'footer_id', 'page_id');
+    }
 }
