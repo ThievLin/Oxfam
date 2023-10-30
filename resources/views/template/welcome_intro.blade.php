@@ -10,7 +10,7 @@
 					<div class="info">
 						<h5><span>{{ $p->title }}<br></span></h5>
 						<p>{!! $p->description!!}</p>
-						<a class="read_more main_anchor transition-ease" href="ourcpa.html">Read More <i class="fa fa-caret-right"></i></a>
+						<a class="read_more main_anchor transition-ease" href="{{$p->link}}">Read More <i class="fa fa-caret-right"></i></a>
 					</div>
 				</div>
 				@endforeach

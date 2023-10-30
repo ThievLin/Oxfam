@@ -49,6 +49,7 @@
                   <option value="getintouch" <?php if($cat->block == "getintouch"){ echo "selected";}  ?> >getintouch</option>
                   <option value="contact-us-cat" <?php if($cat->block == "contact-us-cat"){ echo "selected";}  ?> >contact-us-cat</option>
                   <option value="about-addition" <?php if($cat->block == "about-addition"){ echo "selected";}  ?> >about-addition</option>
+                  <option value="cpaplan" <?php if($cat->block == "cpaplan"){ echo "selected";}  ?> >cpaplan</option>
 
 
 

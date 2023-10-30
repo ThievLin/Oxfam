@@ -34,7 +34,7 @@ $slides = App\Models\Slide::get();
                                 data-duration="20000" data-ease="Linear.easeNone" data-kenburns="on" data-no-retina=""
                                 data-offsetend="0 0" data-offsetstart="0 0" data-rotateend="0" data-rotatestart="0"
                                 data-scaleend="100" data-scalestart="140"
-                                src={{ url('Galleries/' . $slide->slide_image->first()->image) }}" alt="image">
+                                src="{{ url('Galleries/' . $slide->slide_image->first()->image) }}" alt="image">
                             <div class="tp-caption tp-resizeme" data-x="['center','center','center','center']"
                                 data-hoffset="['266','175','79','20']"
                                 data-y="['middle','middle','middle','middle','middle']"

@@ -40,8 +40,8 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     <h5>Oxfam Cambodia</h5>
                     <br>
                     <ul>
-                        <li><i class="fa fa-location-arrow"></i>&emsp;{{ strip_tags($setting->address_site) }}</li>
-                        <li><i class="fa fa-calendar-times-o"></i>&emsp;Tel: (+855) 23 885 412; (855) 23
+                        <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address_site) }}</li>
+                        <li><i class="fa fa-phone"></i>&emsp;Tel: (+855) 23 885 412; (855) 23 
                             885 413</li>
                         <li><i class="fa fa-envelope-o"></i>&emsp;<a href=" {{ url('https://cambodia-redd.org/') }}"
                                 class="transition3s">cambodia-redd.org</a></li>
@@ -51,9 +51,9 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     <h5>Ministry Environment</h5>
                     <br>
                     <ul>
-                        <li><i class="fa fa-location-arrow"></i>&emsp;{{ strip_tags($setting->address) }}</li>
+                        <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address) }}</li>
                         <li>
-                            <i class="fa fa-calendar-times-o">
+                            <i class="fa fa-phone">
                             </i>&emsp;Tel: (+855) 23 213 908
                             (+855) 23 220 369
                         </li>

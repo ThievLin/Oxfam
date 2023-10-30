@@ -12,6 +12,9 @@ use App\Http\Controllers\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+	return redirect()->to('/home');
+});
 
 Route::get('admin', array('as' => 'admin', 'uses' => 'HomeController@index'));
 
@@ -282,3 +285,13 @@ Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index
 
 // handle multi language
 // Route::get('{local}/{name}', ['as' => '{local}/{name}', 'uses' => 'FrontendController@home_index_link_local']);
+
+
+
+
+// Post Detail
+Route::get('{link}/{id}/detail',['as'=>'{link}/{id}/detail','uses'=>'FrontendController@get_post_detail']);
+
+Route::get('{local}/detail/{id}/{link?}',['as'=>'{local}/detail/{id}/{link?}','uses'=>'FrontendController@get_post_detail_local']);
+
+
