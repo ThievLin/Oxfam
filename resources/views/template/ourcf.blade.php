@@ -30,13 +30,4 @@
 
 
 
-	<!-- ======================== Buy on Themeforest =======================  -->
-	<section class="buy_on_themeforest">
-		<div class="container">
-			<h4>Include a contact form for easy communication</h4>
-			<a href="contact" class="button_main mouse_hover2 transition3s">Get In Touch</a>
-		</div>
-	</section> <!-- /buy_on_themeforest -->
-	
-	<!-- ======================== /Buy on Themeforest =======================  -->
 

@@ -51,6 +51,7 @@
                   <option value="about-addition" <?php if($cat->block == "about-addition"){ echo "selected";}  ?> >about-addition</option>
                   <option value="cpaplan" <?php if($cat->block == "cpaplan"){ echo "selected";}  ?> >cpaplan</option>
                   <option value="address" <?php if($cat->block == "address"){ echo "selected";}  ?> >address</option>
+                  <option value="include" <?php if($cat->block == "include"){ echo "selected";}  ?> >include</option>
 
 
 

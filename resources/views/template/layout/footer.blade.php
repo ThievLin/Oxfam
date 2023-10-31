@@ -24,7 +24,7 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 cf_links">
-                    <h5>{{ $footerColumnTwo->title }}</h5>
+                    <h5>Community Forest</h5>
                     <br>
                     <ul>
                         @foreach ($footerColumnTwo->pages as $footerTwo)
