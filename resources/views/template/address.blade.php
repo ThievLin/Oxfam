@@ -40,7 +40,7 @@ $setting = App\Models\Setting::first();
               </div> <!-- /icon_holder -->
               <div class="text">
                 <h5>Contact Email</h5>
-                <a href="https://cambodia-redd.org/" style="color: black;">sina.yun@oxfam.org</a>
+                <a href="mailto:{!!$setting->email!!}" style="color: black;">{{$setting->email}}</a>
               </div> <!-- /text -->
             </div> <!-- /address_type -->
   

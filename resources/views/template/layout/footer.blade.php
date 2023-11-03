@@ -17,8 +17,9 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     <h5>{{ $footerColumnOne->title }}</h5>
                     <ul>
                         @foreach ($footerColumnOne->pages as $footerOne)
-                            <li><a href="{{ url($footerOne->link) }}" class="transition3s"><i
-                                        class="fa fa-check-square"></i>{{ $footerOne->title }}</a>
+                            <li>
+                                <a href="{{ url($footerOne->link) }}" class="transition3s">
+                                <i class="fa fa-check-square"></i>{{ $footerOne->title }}</a>
                             </li>
                         @endforeach
                     </ul>

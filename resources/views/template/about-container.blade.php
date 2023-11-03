@@ -11,22 +11,14 @@
 	<section class="about-page-section" style="padding-bottom: 50px;" >
 		<div class="container">
 			<div class="row">
-				
 				<div class="col-lg-12">
-		
 					<div class="client-wrap client-slider text-center">
 						<div class="client-item ">
-											
 							@if($p->image_post)
-							
-								@foreach($p->image_post as $k=>$ip)
-								
-								<img src="{{ url('Galleries/'.$ip->image) }}" alt="">
-
-								@endforeach
-								
+								@foreach($p->image_post as $k=>$ip)	
+								<img src="{{ url('Galleries/'.$ip->image) }}" alt="" style="padding-right: 20px">
+								@endforeach							
 							@endif
-
 						</div>
 					</div>
 				</div>
