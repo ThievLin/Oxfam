@@ -3,6 +3,16 @@ $setting = App\Models\Setting::first();
 $socials = App\Models\Social::all();
 $footerColumnOne = App\Models\Footer::find(1);
 $footerColumnTwo = App\Models\Footer::find(2);
+
+$phones = explode(', ', $setting->phone);
+$phone1 = $phones[0] ?? '';
+$phone2 = $phones[1] ?? '';
+$phone3 = $phones[2] ?? '';
+$phone4 = $phones[3] ?? '';
+
+$websiteUrl = explode(', ', $setting->website_url);
+$websiteUrl1 = $websiteUrl[0] ?? '';
+$websiteUrl2 = $websiteUrl[1] ?? '';
 ?>
 <!-- ============================== Footer ===================== -->
 <footer>
@@ -19,7 +29,7 @@ $footerColumnTwo = App\Models\Footer::find(2);
                         @foreach ($footerColumnOne->pages as $footerOne)
                             <li>
                                 <a href="{{ url($footerOne->link) }}" class="transition3s">
-                                <i class="fa fa-check-square"></i>{{ $footerOne->title }}</a>
+                                    <i class="fa fa-check-square"></i>{{ $footerOne->title }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -42,10 +52,9 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     <br>
                     <ul>
                         <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address_site) }}</li>
-                        <li><i class="fa fa-phone"></i>&emsp;Tel: (+855) 23 885 412; (855) 23 
-                            885 413</li>
-                        <li><i class="fa fa-envelope-o"></i>&emsp;<a href=" {{ url('https://cambodia-redd.org/') }}"
-                                class="transition3s">cambodia-redd.org</a></li>
+                        <li><i class="fa fa-phone"></i>&emsp;Tel: {{ $phone1 . ' ' . $phone2 }}</li>
+                        <li><i class="fa fa-envelope-o"></i>&emsp;<a href="{{ $websiteUrl1 }}"
+                                class="transition3s">{{ str_replace('https://', '', $websiteUrl1) }}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 ministry_links">
@@ -55,12 +64,12 @@ $footerColumnTwo = App\Models\Footer::find(2);
                         <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address) }}</li>
                         <li>
                             <i class="fa fa-phone">
-                            </i>&emsp;Tel: (+855) 23 213 908
-                            (+855) 23 220 369
+                            </i>&emsp;Tel: {{ $phone3 . ' ' . $phone4 }}
                         </li>
                         <li>
                             <i class="fa fa-envelope-o"></i>&emsp;
-                            <a href=" {{ url('https://www.moe.gov.kh/') }}" class="transition3s">moe.gov.kh</a>
+                            <a href="{{ $websiteUrl2 }}"
+                                class="transition3s">{{ str_replace('https://', '', $websiteUrl2) }}</a>
                         </li>
                     </ul>
                 </div>
@@ -73,8 +82,9 @@ $footerColumnTwo = App\Models\Footer::find(2);
                     <div>
                         <ul style="display: flex;">
                             @foreach ($socials as $social)
-                                <li><a href="{{ url($social->link) }}"><img src="{{ url('images/' . $social->image_icon) }}"
-                                            alt="" style="height: 35px; height: 35px; padding-right: 7px;"></a>
+                                <li><a href="{{ url($social->link) }}"><img
+                                            src="{{ url('images/' . $social->image_icon) }}" alt=""
+                                            style="height: 35px; height: 35px; padding-right: 7px;"></a>
                                 </li>
                             @endforeach
                         </ul>

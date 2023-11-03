@@ -76,7 +76,7 @@ class FooterController extends Controller
         if ($request->has('page_id')) {
                 foreach ($request->page_id as $key => $p) {
                     $foo_page = [
-                    'footer_id' => $foo_id,
+                    'footer_id' => $id,
                     'page_id' => $request->page_id[$key],
                     ];
 

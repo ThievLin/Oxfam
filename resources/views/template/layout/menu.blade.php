@@ -29,8 +29,7 @@ function display_menu($parent_id = 0)
             echo '<a class="transition-ease" href="' . $url . '">' . $icon . ' ' . $val->name . '</a>';
             echo '<ul class="sub_menu">';
             foreach ($sub_menu as $s) {
-
-                $sub_url = url( $s->link);
+                $sub_url = url($s->link);
                 echo '<li><a href="' . $sub_url . '"><i class="' . $s->modul_class . '"></i>' . ' ' . $s->name . '</a></li>';
             }
             echo '</ul>';
@@ -43,7 +42,10 @@ function display_menu($parent_id = 0)
 }
 ?>
 
-<?php $setting = App\Models\Setting::select('phone')->first(); ?>
+<?php
+$setting = App\Models\Setting::select('phone')->first();
+$phone = explode(', ', $setting->phone);
+?>
 
 <!-- ================================ Menu ============================== -->
 <div class="main_menu menu_fixed">
@@ -69,8 +71,8 @@ function display_menu($parent_id = 0)
                         </button>
                     </div>
                     <p class="navbar-text flt_left">
-                        <a href="tel:+(+855) 23 885 412" class="transition4s"><i class="fa fa-phone"></i>
-                            {{ $setting->phone }}
+                        <a href="{{ 'tel:' . $phone[0] }}" class="transition4s"><i class="fa fa-phone"></i>
+                            {{ $phone[0] }}
                         </a>
                     </p>
                 </nav> <!-- /navbar-default -->
