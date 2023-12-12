@@ -53,8 +53,6 @@
                   <option value="address" <?php if($cat->block == "address"){ echo "selected";}  ?> >address</option>
                   <option value="include" <?php if($cat->block == "include"){ echo "selected";}  ?> >include</option>
 
-
-
                   <option value="about" <?php if($cat->block == "about"){ echo "selected";}  ?> >About</option>
                   <option value="inner_banner" <?php if($cat->block == "inner_banner"){ echo "selected";}  ?> >inner_banner</option>
 

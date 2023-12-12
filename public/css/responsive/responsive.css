@@ -21,24 +21,27 @@
 		overflow-x:hidden;
 	}
 	.top_header ul li {
-		margin-right:15px;
+		margin-right:10px;
 	}
 	.main_menu nav .navbar-nav>li>a,
 	.main_menu nav .navbar-nav>li:nth-child(2)>a,
 	.main_menu nav .navbar-nav>li:nth-child(4)>a,
 	.main_menu nav .navbar-nav>li:nth-child(5)>a,
 	.main_menu nav .navbar-nav>li:nth-child(6)>a {
-		padding: 24px 25px 24px 25px;
+		padding: 20px 15px 20px 15px;
+	}
+	.main_menu nav .navbar-nav>li:nth-child(3)>a{
+		padding: 21px 22px 25px 22px;
 	}
 	.main_menu nav .navbar-nav>li:nth-child(7)>a {
-		padding: 24px 17px 24px 17px;
+		padding: 20px 17px 20px 17px;
 	}
 	.main_menu nav p a i {
 		padding-right:10px;
 	}
 	.main_menu nav p a {
-		font-size: 22px;
-		padding: 21px 0 21px 6px;
+		font-size: 20px;
+		padding: 21px 0 21px 1px;
 		margin-right:0;
 	}
 	.main_menu nav p {
@@ -129,7 +132,11 @@
 
 } /*min-width: 992px and max-width: 1199px*/
 
-
+@media only screen and (max-width: 1103px) {
+	.main_menu nav .navbar-nav>li:nth-child(3)>a{
+		padding: 21px 22px 25px 22px;
+	}
+}
 
 @media (min-width: 768px) and (max-width: 991px) {
 	.bottom_header .address,
@@ -137,7 +144,7 @@
 		padding-left: 50px;
 	}
 	.bottom_header p {
-		font-size: 16px;
+		font-size: 15px;
 	}
 	.main_menu nav .navbar-collapse {
 		padding:10px 8px;
@@ -149,7 +156,7 @@
 	.main_menu nav .navbar-nav>li:nth-child(5)>a,
 	.main_menu nav .navbar-nav>li:nth-child(6)>a,
 	.main_menu nav .navbar-nav>li:nth-child(7)>a{
-		padding: 24px 21px;
+		padding: 20px 14px;
 	}
 	.main_menu nav .navbar-collapse ul.nav {
 		border-right: 1px dashed #424242;
@@ -281,6 +288,27 @@
 
 } /*max-width: 1199px*/
 
+@media only screen and (max-width: 430px) {
+	#logo_holder {
+		width: 100px;
+		height: 60px;
+	}
+	.bottom_header p {
+		font-size: 14px;
+	}
+	.bottom_header .time_schedule:before {
+		padding-left: 10px;
+	}
+	
+
+}
+
+@media only screen and (max-width: 400px) {
+	.bottom_header p {
+		font-size: 12px;
+	}
+	
+}
 
 @media (max-width: 991px) {
 	.top_header {
@@ -301,6 +329,7 @@
 		padding: 8px;
 		text-align: center;
 	}
+	
 	.main_menu nav p:before {
 		width:0;
 	}
@@ -708,6 +737,7 @@
 		font-size: 13px;
 		
 	}
+
 }
 @media (max-width: 479px) {
 	.banner .tp-caption {
@@ -737,20 +767,42 @@
 @media (max-width: 616px) {
 	.bottom_header .col-xs-6 {
 		width:100%;
-		text-align: center;
+		text-align: right;
+	}
+	.main_menu nav p a{
+		font-size: 20px;
+	}
+	.welcome_sec .welcome_title h2{
+		font-size: 35px;
+	}
+	#logo_holder{
+		padding-bottom: 20px;
 	}
 	.bottom_header .address, .bottom_header .time_schedule {
 		padding-left: 0;
 	}
-	.bottom_header .time_schedule:before,
+	/* .bottom_header .time_schedule:before,
 	.bottom_header .address:before {
-		position: static;
-	}
+		
+		font-size: 32px;
+		padding-left: 190px;
+		padding-top: 5px;
+	} */
 	.award_winning .slider_container {
 		padding-right:15px;
 	}
-	
+	.bottom_header .time_schedule{
+		padding-left: 10px;
+	}
 
+	
+	.bottom_header .time_schedule:before{
+		font-size: 25px;
+		padding-left: 200px;
+		padding-top: 10px;
+	}
+
+	
 }
 
 @media (max-width: 460px) {
@@ -831,11 +883,33 @@
 		text-align: center;
 	}
 }
+
+@media only screen and (max-width: 390px){
+	#donate{
+		padding: 0px 0px 0px 0px;
+		margin: -34px;
+	}
+}
 @media (max-width: 604px) {
 	.welocme_intro .img_holder,
 	.welocme_intro .info {
 		display: block;
 		padding:0;
+	}
+	
+	
+	#text{
+		padding-left: 80px;
+	}
+
+	.top_header p{
+		font-size: 11px;
+	}
+	#icon{
+		width: 55px;
+		height: 55px;
+		margin-left: 15px;
+		margin-bottom: -45px;
 	}
 	.welocme_intro .info {
 		margin:10px 0;
@@ -843,14 +917,34 @@
 	.welocme_intro {
 		text-align: center;
 	}
+	#donate{
+		padding: 11px 10px 11px 10px;
+		margin: -34px;
+	}
+	#donate:hover{
+		display: none;
+	}
+	/* #bott{
+		
+	} */
+	#img-oxfam{
+		height: 180px;
+		width: 210px;
+		text-align: center;
+	}
+	#img-partner{
+		width: 100px;
+		height: 40px;
+	}
 	.welcome_sec .welcome_title  h2 {
-		line-height: 66px;
+		line-height: 41px;
 	}
 	.news .title_holder2 h3 span:before {
 		top: -22px;
 	}
 
 }
+
 @media (max-width: 590px) {
 	.login_page .login_option .social_icon,
 	.login_page .submit_button {
@@ -920,3 +1014,4 @@
 		height:300px;
 	}
 }
+

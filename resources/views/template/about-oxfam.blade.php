@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
-            <img src="{{url('images/'.$p->image)}}" alt="images" class="img-responsive">
+            <img src="{{url('images/'.$p->image)}}" alt="images" class="img-responsive" id="img-oxfam">
         </div>
     </div>
 </section>

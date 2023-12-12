@@ -16,7 +16,7 @@
 						<div class="client-item ">
 							@if($p->image_post)
 								@foreach($p->image_post as $k=>$ip)	
-								<img src="{{ url('Galleries/'.$ip->image) }}" alt="" style="padding-right: 20px">
+								<img src="{{ url('Galleries/'.$ip->image) }}" alt="" style="padding-right: 20px" id="img-partner">
 								@endforeach							
 							@endif
 						</div>

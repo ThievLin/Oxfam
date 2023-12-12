@@ -203,7 +203,6 @@ h5 span {
 	transition: all 0.3s ease 0s;
 }
 
-
 button,
 input {
 	outline: none;
@@ -342,7 +341,7 @@ a.mouse_hover3:focus {
 }
 .bottom_header p {
 	font-weight: 900;
-	font-size: 20px;
+	font-size: 15px;
 	color:#272727;
 }
 .bottom_header span {
@@ -396,7 +395,7 @@ a.mouse_hover3:focus {
 .bottom_header .time_schedule:before {
 	content: '';
 	font-family: 'font-awesome';
-	font-size: 48px;
+	font-size: 43px;
 	color: #6aaf08;
 	position: absolute;
 	left:0;
@@ -448,22 +447,22 @@ a.mouse_hover3:focus {
 	border:none;
 }
 .main_menu nav .navbar-nav>li:nth-child(2)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav>li:nth-child(3)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav>li:nth-child(4)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav>li:nth-child(5)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav>li:nth-child(6)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav>li:nth-child(7)>a {
-	padding: 25px 24px 25px 24px;
+	padding: 25px 22px 25px 22px;
 }
 .main_menu nav .navbar-nav ul.sub_menu {
 	position: absolute;
@@ -529,12 +528,12 @@ a.mouse_hover3:focus {
 	font-family: 'Lora', serif;
 	font-weight: 700;
 	color:#fff;
-	font-size: 30px;
+	font-size: 27px;
 	display: block;
 	height: 100%;
 	border: 1px dashed #b5d784;
 	border-left: none;
-	padding: 21px 0 21px 20px;
+	padding: 21px 0 21px 2px;
     margin-right: -5px;
 }
 .main_menu nav p a i {
@@ -2320,7 +2319,7 @@ form input:-moz-placeholder {
 }
 .contact_us .heading p {
 	font-family: 'Lora', serif;
-	font-size:18px;
+	font-size:20px;
 	font-weight: normal;
 	line-height: 34px;
     margin-top: -15px;

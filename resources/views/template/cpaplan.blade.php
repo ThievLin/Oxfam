@@ -1,5 +1,4 @@
-<?php $p= $cat->post->first() ?>
-
+<?php $p= $cat->post()->first() ?>
 <section class="page-content custom-background color-background" style="background-color: #ffffff; margin-bottom: 0px; margin-top: 0px;">
     <section class="container" style="max-width: 1200px; ">
       <div class="row" style="
