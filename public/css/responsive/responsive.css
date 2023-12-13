@@ -290,8 +290,7 @@
 
 @media only screen and (max-width: 430px) {
 	#logo_holder {
-		width: 100px;
-		height: 60px;
+		width: 130px;
 	}
 	.bottom_header p {
 		font-size: 14px;
@@ -315,13 +314,13 @@
 		text-align: center;
 	}
 	.top_header ul {
-	    text-align: center;
+	    text-align: right;
 	    margin-top: 15px;
 	    padding-bottom: 5px;
 	}
 	.bottom_header .logo_holder {
 		text-align: center;
-		margin-bottom: 25px;
+		margin-bottom: 0;
 	}
 	.main_menu nav p {
 		width:100%;
@@ -775,9 +774,6 @@
 	.welcome_sec .welcome_title h2{
 		font-size: 35px;
 	}
-	#logo_holder{
-		padding-bottom: 20px;
-	}
 	.bottom_header .address, .bottom_header .time_schedule {
 		padding-left: 0;
 	}
@@ -887,7 +883,7 @@
 @media only screen and (max-width: 390px){
 	#donate{
 		padding: 0px 0px 0px 0px;
-		margin: -34px;
+		/* margin: -34px; */
 	}
 }
 @media (max-width: 604px) {
@@ -903,7 +899,7 @@
 	}
 
 	.top_header p{
-		font-size: 11px;
+		font-size: 12px;
 	}
 	#icon{
 		width: 55px;
@@ -918,11 +914,8 @@
 		text-align: center;
 	}
 	#donate{
-		padding: 11px 10px 11px 10px;
-		margin: -34px;
-	}
-	#donate:hover{
-		display: none;
+		/* padding: 11px 10px 11px 10px; */
+		/* margin: -34px; */
 	}
 	/* #bott{
 		
