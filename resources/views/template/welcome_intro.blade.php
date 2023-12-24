@@ -5,7 +5,7 @@
 				@foreach ( $cat->post  as $p )
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 irrigation">
 					<div class="img_holder">
-						<img src="{{url('images/'.$p->image)}}" alt="images" width="200">
+						<img src="{{url('images/'.$p->image)}}" alt="images" width="100%">
 					</div>
 					<div class="info">
 						<h5><span>{{ $p->title }}<br></span></h5>

@@ -3,7 +3,7 @@
 	<div class="overlay"></div>
 	<div class="container parallex_text">
         @foreach ( $cat->post as $p )
-        <h3>{{$p->title}}</h3>
+        <h3 style="margin: 0">{{$p->title}}</h3>
 			<p>{!! $p->description!!}</p>
 		<h5>Lets Start Your Service Today  - <a href="contact">Contact Us</a></h5>
         @endforeach	

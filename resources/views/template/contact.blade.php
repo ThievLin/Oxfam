@@ -1,25 +1,17 @@
-<?php $p= $cat->post->first() ?>
+<?php $p = $cat->post->first(); ?>
 <!-- =============================== Contact us ========================== -->
 <section class="contact_us" style="padding-top: 40px;">
-  <div class="container">
-    <div class="row heading">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="title_holder2">
-          <h3>Get in <span>Touch</span></h3>
-        </div> <!-- /title_holder2 -->
-      </div>
-      <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12">
-      <h5>{{$p->title}}</h5><br><br>
-        <p>
-          {!!$p->description!!}
-        </p>
-      </div>
-    </div> <!-- /row -->
-  </div> <!-- /container -->
+    <div class="container">
+        <div class="row heading">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="title_holder2" style="margin-bottom: 24px">
+                    <h3>Get in <span>Touch</span></h3>
+                </div> <!-- /title_holder2 -->
+                <h5 style="margin-bottom:24px;">{{ $p->title }}</h5>
+                {!! $p->description !!}
+            </div>
+        </div> <!-- /row -->
+    </div> <!-- /container -->
 </section>
 
 <!-- =============================== Contact us ========================== -->
-
-
-
-

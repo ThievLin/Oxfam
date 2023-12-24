@@ -1,3 +1,14 @@
+
+.welocme_intro {
+	padding-top:72px;
+	padding-bottom:35px;
+}
+
+@media (min-width: 625px) {
+	.bottom_header .time_schedule:before {
+		top:10px;
+	}
+}
 @media (min-width: 992px) {
 	.container {
 		padding-left: 0 !important;
@@ -258,7 +269,7 @@
 	footer .useful_links,
 	footer .get_in_touch {
 		margin-bottom: 30px;
-    	min-height: 350px;
+    	/* min-height: 350px; */
 	}
 	.bottom_footer {
 		padding-bottom: 20px;
@@ -290,23 +301,20 @@
 
 @media only screen and (max-width: 430px) {
 	#logo_holder {
-		width: 130px;
+		width: 160px;
 	}
 	.bottom_header p {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	.bottom_header .time_schedule:before {
 		padding-left: 10px;
 	}
-	
-
 }
 
 @media only screen and (max-width: 400px) {
 	.bottom_header p {
 		font-size: 12px;
 	}
-	
 }
 
 @media (max-width: 991px) {
@@ -316,7 +324,6 @@
 	.top_header ul {
 	    text-align: right;
 	    margin-top: 15px;
-	    padding-bottom: 5px;
 	}
 	.bottom_header .logo_holder {
 		text-align: center;
@@ -336,7 +343,7 @@
 		margin-right:0;
 		border-left: 1px dashed #b5d784;
 		padding: 0;
-	    line-height: 49px;
+	    line-height: 51px;
 	}
 	.main_menu nav p,
 	.main_menu nav .navbar-collapse {
@@ -509,7 +516,7 @@
 		border-bottom: 1px dashed #424242;
 	}
 	.main_menu nav .navbar-nav ul.sub_menu li a {
-		padding: 0px 20px 3px 50px;
+		padding: 0px 20px 3px 30px;
 	}
 	.main_menu nav .navbar-nav>li:hover {
 		background-color: #212121 !important;
@@ -571,7 +578,7 @@
 	}
 	.parallax {
 		height:auto;
-		padding-bottom: 35px;
+		padding-bottom: 72px;
 	}
 	.bottom_footer {
 		text-align: center;
@@ -649,9 +656,7 @@
 	.cart_table .shipping_address .submit_form {
 		margin-bottom: 30px;
 	}
-	.contact_us .heading {
-		text-align: center;
-	}
+
 	.contact_us .heading p {
 		margin-top: 10px;
 	}
@@ -766,7 +771,7 @@
 @media (max-width: 616px) {
 	.bottom_header .col-xs-6 {
 		width:100%;
-		text-align: right;
+		text-align: center;
 	}
 	.main_menu nav p a{
 		font-size: 20px;
@@ -777,28 +782,25 @@
 	.bottom_header .address, .bottom_header .time_schedule {
 		padding-left: 0;
 	}
-	/* .bottom_header .time_schedule:before,
+	.bottom_header .time_schedule:before,
 	.bottom_header .address:before {
-		
-		font-size: 32px;
+		position: static;
+		/* font-size: 32px;
 		padding-left: 190px;
-		padding-top: 5px;
-	} */
+		padding-top: 5px; */
+	}
 	.award_winning .slider_container {
 		padding-right:15px;
 	}
 	.bottom_header .time_schedule{
 		padding-left: 10px;
 	}
-
 	
-	.bottom_header .time_schedule:before{
+	/* .bottom_header .time_schedule:before{
 		font-size: 25px;
 		padding-left: 200px;
-		padding-top: 10px;
-	}
-
-	
+		padding-top: 17px;
+	} */
 }
 
 @media (max-width: 460px) {
@@ -857,7 +859,7 @@
 		
 	}
 	.contact_us .address .address_type .icon_holder {
-		margin:10px auto;
+		margin: 10px auto 24px auto;
 	}
 	.contact_us .address .address_type .text {
 		width:100%;
@@ -886,6 +888,7 @@
 		/* margin: -34px; */
 	}
 }
+
 @media (max-width: 604px) {
 	.welocme_intro .img_holder,
 	.welocme_intro .info {
@@ -894,24 +897,26 @@
 	}
 	
 	
-	#text{
+	/* #text{
 		padding-left: 80px;
-	}
+	} */
 
 	.top_header p{
 		font-size: 12px;
 	}
-	#icon{
+	/* #icon{
 		width: 55px;
 		height: 55px;
 		margin-left: 15px;
 		margin-bottom: -45px;
-	}
+	} */
 	.welocme_intro .info {
-		margin:10px 0;
+		margin: 32px 0;
 	}
 	.welocme_intro {
 		text-align: center;
+		padding-top: 0px;
+    	padding-bottom: 35px;
 	}
 	#donate{
 		/* padding: 11px 10px 11px 10px; */
@@ -921,14 +926,12 @@
 		
 	} */
 	#img-oxfam{
-		height: 180px;
-		width: 210px;
+		width: 280px;
 		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
 	}
-	#img-partner{
-		width: 100px;
-		height: 40px;
-	}
+	
 	.welcome_sec .welcome_title  h2 {
 		line-height: 41px;
 	}
@@ -1007,4 +1010,3 @@
 		height:300px;
 	}
 }
-

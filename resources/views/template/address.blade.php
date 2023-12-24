@@ -2,11 +2,11 @@
 $setting = App\Models\Setting::first();
 $p= $cat->post->first();
 ?>
-<section class="contact_us" style="padding-top: 40px;">
+<section class="contact_us">
     <div class="container">
       <div class="row contact_deatils">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left address">
-          <h4 style="line-height:45px;">{{$p->title}}</h4>
+          <h4 style="margin-bottom: 32px">{{$p->title}}</h4>
           <div class="address_holder">
             <div class="address_type">
               <div class="icon_holder border_round" id="icon">
@@ -28,7 +28,7 @@ $p= $cat->post->first();
               </div> <!-- /icon_holder -->
               <div class="text">
                 <h5 id="text">Contact Details</h5>
-                <p>Troll Free:{!!$setting->phone!!} </p>
+                <p>Troll Free: {!!$setting->phone!!} </p>
                 
               </div> <!-- /text -->
             </div> <!-- /address_type -->

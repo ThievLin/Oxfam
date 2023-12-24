@@ -12,14 +12,18 @@
                     </div>
                 </div> --}}
                 <div class="col-lg-9 col-md-10 col-sm-9 col-xs-12">
-                    <h3 id="bott" style="margin-top: 0">Call to <span>{{ $p->title }}</span>&emsp;&emsp;</h3>
+                    <h3 id="bott" style="margin-top: 0; margin-bottom:24px">Call to
+                        <span>{{ $p->title }}</span>&emsp;&emsp;
+                    </h3>
                 </div>
-                <div class="col-lg-3 col-md-2 col-sm-3 col-xs-12">
-                    <a href="contact" style="margin: 0;width:100%" id="donate"> Donate <i
-                            class="fa fa-caret-right"></i></a>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     {!! $p->description !!}
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <a href="contact"
+                        style="margin: 15px 20px 0px 20px; margin-left:auto; margin-right:auto; display:block;"
+                        id="donate"> Donate <i class="fa fa-caret-right"></i></a>
                 </div>
             @endforeach
 
