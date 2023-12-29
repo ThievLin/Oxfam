@@ -1,5 +1,8 @@
+
 <?php
+// dd(Request::segment(1));
 $slides = App\Models\Slide::get();
+
 ?>
 <!-- ================================= Banner ====================== -->
 <section class="banner">

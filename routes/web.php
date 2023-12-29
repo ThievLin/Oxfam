@@ -12,8 +12,11 @@ use App\Http\Controllers\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-	return redirect()->to('/home');
+// Route::get('/',function(){
+// 	return redirect()->to('/home');
+// });
+Route::get('/', function () {
+    return redirect()->to('/en/home');
 });
 
 Route::get('admin', array('as' => 'admin', 'uses' => 'HomeController@index'));
@@ -281,18 +284,15 @@ Route::post('login', [LoginController::class, 'post_login']);
 Route::get('logout', [LoginController::class, 'dologout']);
 
 // Post Detail
-Route::get('{link}/{id}/detail',['as'=>'{link}/{id}/detail','uses'=>'FrontendController@get_post_detail']);
+Route::get('{link}/{id}/detail', ['as' => '{link}/{id}/detail', 'uses' => 'FrontendController@get_post_detail']);
+Route::get('{local}/detail/{id}/{link?}', ['as' => '{local}/detail/{id}/{link?}', 'uses' => 'FrontendController@get_post_detail_local']);
 
 // Handle Request dynamic link
-Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index_link']);
+// Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index_link']);
 
 // handle multi language
-// Route::get('{local}/{name}', ['as' => '{local}/{name}', 'uses' => 'FrontendController@home_index_link_local']);
-
-
-
-
-
-
-
-
+Route::get('/{local}', function () {
+    return redirect()->to('en/' . Request()->segment(1));
+});
+Route::get('{name}', ['as' => '{name}', 'uses' => 'FrontendController@home_index_link_local']);
+Route::get('{local}/{name}', ['as' => '{local}/{name}', 'uses' => 'FrontendController@home_index_link_local']);

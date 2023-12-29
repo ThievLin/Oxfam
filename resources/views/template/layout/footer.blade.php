@@ -1,8 +1,13 @@
 <?php
 $setting = App\Models\Setting::first();
+$settingkh = App\Models\Setting::find(2);
 $socials = App\Models\Social::all();
 $footerColumnOne = App\Models\Footer::find(1);
 $footerColumnTwo = App\Models\Footer::find(2);
+$footerColumnThree = App\Models\Footer::find(3);
+$footerColumnFour = App\Models\Footer::find(4);
+
+// dd($footerColumnTwo = App\Models\Footer::find(3));
 
 $phones = explode(', ', $setting->phone);
 $phone1 = $phones[0] ?? '';
@@ -20,55 +25,108 @@ $websiteUrl2 = $websiteUrl[1] ?? '';
         <div class="main_footer" style="padding-bottom: 50px;">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 about_gardener">
-                    <h5>About <span>Promotion Equitable Climate Actions</span> in Cambodia Project</h5>
-                    {!! $setting->description !!}
+                    @php
+                        if (Request::segment(1) == 'en') {
+                            echo '<h5>Welcome to <span>Promotion Equitable Climate Actions</span> in Cambodia Project</h5>';
+                            echo $setting->description;
+                        } else {
+                            echo '<h5>ស្វាគមន៍​មកកាន់ <span>ការលើកកម្ពស់សកម្មភាពអាកាសធាតុប្រកបដោយសមធម៌</span> គម្រោងនៅកម្ពុជា</h5>';
+                            echo $settingkh->description;
+                        }
+                    @endphp
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
-                    <h5>{{ $footerColumnOne->title }}</h5>
-                    <ul>
-                        @foreach ($footerColumnOne->pages as $footerOne)
-                            <li>
-                                <a href="{{ url($footerOne->link) }}" class="transition3s">
-                                    <i class="fa fa-check-square"></i>{{ $footerOne->title }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    @php
+                        if (Request::segment(1) == 'en') {
+                            echo '<h5>' . $footerColumnOne->title . '</h5>';
+                            echo '<ul>';
+                            foreach ($footerColumnOne->pages as $footerOne) {
+                                echo '<li>';
+                                echo '<a href="' . url($footerOne->link) . '" class="transition3s">';
+                                echo '<i class="fa fa-check-square"></i>' . $footerOne->title;
+                                echo '</a>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo '<h5>' . $footerColumnFour->title . '</h5>';
+                            echo '<ul>';
+                            foreach ($footerColumnFour->pages as $footerFour) {
+                                echo '<li>';
+                                echo '<a href="' . url($footerFour->link) . '" class="transition3s">';
+                                echo '<i class="fa fa-check-square"></i>' . $footerFour->title;
+                                echo '</a>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    @endphp
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
-                    <h5>Community Forest</h5>
-                    <ul>
-                        @foreach ($footerColumnTwo->pages as $footerTwo)
-                            <li>
-                                <a href="{{ url($footerTwo->link) }}" class="transition3s">
-                                    <i class="fa fa-check-square"></i>{{ $footerTwo->title }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    @php
+                        if (Request::segment(1) == 'en') {
+                            echo '<h5>' . $footerColumnTwo->title . '</h5>';
+                            echo '<ul>';
+                            foreach ($footerColumnTwo->pages as $footerTwo) {
+                                echo '<li>';
+                                echo '<a href="' . url($footerTwo->link) . '" class="transition3s">';
+                                echo '<i class="fa fa-check-square"></i>' . $footerTwo->title;
+                                echo '</a>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo '<h5>' . $footerColumnThree->title . '</h5>';
+                            echo '<ul>';
+                            foreach ($footerColumnThree->pages as $footerTwo) {
+                                echo '<li>';
+                                echo '<a href="' . url($footerTwo->link) . '" class="transition3s">';
+                                echo '<i class="fa fa-check-square"></i>' . $footerTwo->title;
+                                echo '</a>';
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    @endphp
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
-                    <h5>Oxfam Cambodia</h5>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address_site) }}</li>
-                        <li><i class="fa fa-phone"></i>&emsp;Tel: {{ $phone1 . ' ' . $phone2 }}</li>
-                        <li><i class="fa fa-envelope-o"></i>&emsp;<a href="{{ $websiteUrl1 }}"
-                                class="transition3s">{{ str_replace('https://', '', $websiteUrl1) }}</a></li>
-                    </ul>
+                    @php
+                        if (Request::segment(1) == 'en') {
+                            echo '<h5>Oxfam Cambodia</h5>';
+                            echo '<ul>';
+                            echo '<li><i class="fa fa-map-marker"></i>&emsp;' . strip_tags($setting->address_site) . '</li>';
+                            echo '<li><i class="fa fa-phone"></i>&emsp;Tel: ' . $phone1 . ' ' . $phone2 . '</li>';
+                            echo '<li><i class="fa fa-envelope-o"></i>&emsp;<a href="' . $websiteUrl1 . '" class="transition3s">' . str_replace('https://', '', $websiteUrl1) . '</a></li>';
+                            echo '</ul>';
+                        } else {
+                            echo '<h5>Oxfam កម្ពុជា</h5>';
+                            echo '<ul>';
+                            echo '<li><i class="fa fa-map-marker"></i>&emsp;' . strip_tags($settingkh->address_site) . '</li>';
+                            echo '<li><i class="fa fa-phone"></i>&emsp;Tel: ' . $phone1 . ' ' . $phone2 . '</li>';
+                            echo '<li><i class="fa fa-envelope-o"></i>&emsp;<a href="' . $websiteUrl1 . '" class="transition3s">' . str_replace('https://', '', $websiteUrl1) . '</a></li>';
+                            echo '</ul>';
+                        }
+                    @endphp
+
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 ministry_links">
-                    <h5>Ministry Environment</h5>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i>&emsp;{{ strip_tags($setting->address) }}</li>
-                        <li>
-                            <i class="fa fa-phone">
-                            </i>&emsp;Tel: {{ $phone3 . ' ' . $phone4 }}
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope-o"></i>&emsp;
-                            <a href="{{ $websiteUrl2 }}"
-                                class="transition3s">{{ str_replace('https://', '', $websiteUrl2) }}</a>
-                        </li>
-                    </ul>
+                    @php
+                        if (Request::segment(1) == 'en') {
+                            echo '<h5>Ministry of Environment</h5>';
+                            echo '<ul>';
+                            echo '<li><i class="fa fa-map-marker"></i>&emsp;' . strip_tags($setting->address) . '</li>';
+                            echo '<li><i class="fa fa-phone"></i>&emsp;Tel: ' . $phone3 . ' ' . $phone4 . '</li>';
+                            echo '<li><i class="fa fa-envelope-o"></i>&emsp;<a href="' . $websiteUrl2 . '" class="transition3s">' . str_replace('https://', '', $websiteUrl2) . '</a></li>';
+                            echo '</ul>';
+                        } else {
+                            echo '<h5>ក្រសួងបរិស្ថាន</h5>';
+                            echo '<ul>';
+                            echo '<li><i class="fa fa-map-marker"></i>&emsp;' . strip_tags($settingkh->address) . '</li>';
+                            echo '<li><i class="fa fa-phone"></i>&emsp;Tel: ' . $phone3 . ' ' . $phone4 . '</li>';
+                            echo '<li><i class="fa fa-envelope-o"></i>&emsp;<a href="' . $websiteUrl2 . '" class="transition3s">' . str_replace('https://', '', $websiteUrl2) . '</a></li>';
+                            echo '</ul>';
+                        }
+                    @endphp
                 </div>
             </div> <!-- /row -->
         </div> <!-- /main_footer -->
@@ -90,8 +148,17 @@ $websiteUrl2 = $websiteUrl[1] ?? '';
                     <a href="#top" class="back_top"><i class="fa fa-chevron-up"></i></a>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <p style="color: #9e9e9e; font-size: small; text-align:center;">
-                        {{ strip_tags($setting->copyright) }}</p>
+                    @if (Request::segment(1) == 'en')
+                        <p style="color: #9e9e9e; font-size: small; text-align:center;">
+                            {{ strip_tags($setting->copyright) }}
+                        </p>
+                    @else
+                        <p style="color: #9e9e9e; font-size: small; text-align:center;">
+                            {{ strip_tags($settingkh->copyright) }}
+                        </p>
+                    @endif
+
+
                 </div>
             </div>
         </div> <!-- /bottom_footer -->

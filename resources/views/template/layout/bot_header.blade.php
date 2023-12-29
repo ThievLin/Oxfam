@@ -1,5 +1,7 @@
        <?php
        $setting = App\Models\Setting::first();
+       $settingkh = App\Models\Setting::find(2);
+       
        ?>
        <!-- ================ Bottom header ============= -->
        <div class="bottom_header">
@@ -17,7 +19,12 @@
                    </div>
                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                        <div class="time_schedule">
-                           {!! $setting->work_time !!}
+                           @if (Request::segment(1) == 'en')
+                               {!! $setting->work_time !!}
+                           @else
+                               {!! $settingkh->work_time !!}
+                           @endif
+
                        </div><!--  /time_schedule -->
                    </div>
 

@@ -1,7 +1,7 @@
 @extends('template.layout.master')
 
 @section('content')
-
+{{-- @dd($page->categories); --}}
     @if (!empty($page))
 
         @if ($page->description)
