@@ -36,58 +36,65 @@ $websiteUrl2 = $websiteUrl[1] ?? '';
                     @endphp
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
-                    @php
-                        if (Request::segment(1) == 'en') {
-                            echo '<h5>' . $footerColumnOne->title . '</h5>';
-                            echo '<ul>';
-                            foreach ($footerColumnOne->pages as $footerOne) {
-                                echo '<li>';
-                                echo '<a href="' . url($footerOne->link) . '" class="transition3s">';
-                                echo '<i class="fa fa-check-square"></i>' . $footerOne->title;
-                                echo '</a>';
-                                echo '</li>';
-                            }
-                            echo '</ul>';
-                        } else {
-                            echo '<h5>' . $footerColumnFour->title . '</h5>';
-                            echo '<ul>';
-                            foreach ($footerColumnFour->pages as $footerFour) {
-                                echo '<li>';
-                                echo '<a href="' . url($footerFour->link) . '" class="transition3s">';
-                                echo '<i class="fa fa-check-square"></i>' . $footerFour->title;
-                                echo '</a>';
-                                echo '</li>';
-                            }
-                            echo '</ul>';
-                        }
-                    @endphp
+                    @if (Request::segment(1) == 'en')
+                        <h5>{{ $footerColumnOne->title }}</h5>
+                        <ul>
+                            @foreach ($footerColumnOne->pages as $footerOne)
+                                <li>
+                                    @if ($footerOne->link != '#')
+                                        <a href="{{ url('en/' . $footerOne->link) }}" class="transition3s">
+                                            <i class="fa fa-check-square"></i>{{ $footerOne->title }}
+                                        </a>
+                                    @else
+                                        <i class="fa fa-check-square"></i>{{ $footerOne->title }}
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <h5>{{ $footerColumnFour->title }}</h5>
+                        <ul>
+                            @foreach ($footerColumnFour->pages as $footerFour)
+                                <li>
+                                    @if ($footerFour->link != '#')
+                                        <a href="{{ url('kh/' . $footerFour->link) }}" class="transition3s">
+                                            <i class="fa fa-check-square"></i>{{ $footerFour->title }}
+                                        </a>
+                                    @else
+                                        <i class="fa fa-check-square"></i>{{ $footerFour->title }}
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+
+
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
-                    @php
-                        if (Request::segment(1) == 'en') {
-                            echo '<h5>' . $footerColumnTwo->title . '</h5>';
-                            echo '<ul>';
-                            foreach ($footerColumnTwo->pages as $footerTwo) {
-                                echo '<li>';
-                                echo '<a href="' . url($footerTwo->link) . '" class="transition3s">';
-                                echo '<i class="fa fa-check-square"></i>' . $footerTwo->title;
-                                echo '</a>';
-                                echo '</li>';
-                            }
-                            echo '</ul>';
-                        } else {
-                            echo '<h5>' . $footerColumnThree->title . '</h5>';
-                            echo '<ul>';
-                            foreach ($footerColumnThree->pages as $footerTwo) {
-                                echo '<li>';
-                                echo '<a href="' . url($footerTwo->link) . '" class="transition3s">';
-                                echo '<i class="fa fa-check-square"></i>' . $footerTwo->title;
-                                echo '</a>';
-                                echo '</li>';
-                            }
-                            echo '</ul>';
-                        }
-                    @endphp
+                    @if (Request::segment(1) == 'en')
+                        <h5>{{ $footerColumnTwo->title }}</h5>
+                        <ul>
+                            @foreach ($footerColumnTwo->pages as $footerTwo)
+                                <li>
+                                    <a href="{{ url('en/' . $footerTwo->link) }}" class="transition3s">
+                                        <i class="fa fa-check-square"></i>{{ $footerTwo->title }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <h5>{{ $footerColumnThree->title }}</h5>
+                        <ul>
+                            @foreach ($footerColumnThree->pages as $footerTwo)
+                                <li>
+                                    <a href="{{ url('kh/' . $footerTwo->link) }}" class="transition3s">
+                                        <i class="fa fa-check-square"></i>{{ $footerTwo->title }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 services">
                     @php
