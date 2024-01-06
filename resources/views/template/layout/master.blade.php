@@ -56,7 +56,23 @@
         rel='stylesheet' type='text/css'>
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic') }}"
         rel='stylesheet' type='text/css'>
-
+    @if (Request()->segment(1) == 'kh')
+        <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;400;700;900&display=swap"
+            rel="stylesheet">
+        <style>
+            html,
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            h6 {
+                font-family: 'Battambang', system-ui !important;
+            }
+        </style>
+    @endif
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive/responsive.css') }}">
@@ -78,7 +94,6 @@
         @include('template.layout.menu')
 
 
-        @include('template.layout.header')
         <!-- Js File -->
         @yield('content')
         <!-- j Query -->
